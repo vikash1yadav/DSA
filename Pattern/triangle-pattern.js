@@ -121,4 +121,60 @@ const pyramidPattern = function (n = 5) {
     return pattern;
 }
 
-console.log(pyramidPattern(6));
+
+
+/* */
+
+const trianglePatternWithABC = function (row = 5) {
+    let pattern = ""
+    let num = 0;
+    for (let i = 1; i < row; i++) {
+        // let char= 0||'A'
+        num = i + 1;
+        for (let j = 0; j < i; j++) {
+            // num+=1
+            // pattern = pattern + (num)+" ";
+
+            /*1
+              2 3
+              3 4 5
+              4 5 6 7 */
+            pattern = pattern + (i+j)+" ";
+        }
+        pattern = pattern + '\n';
+    }
+    return pattern;
+}
+
+/* 
+1
+2 1
+3 2 1*/
+const trianglePatternWithReverse123 = function (row = 5) {
+    let pattern = ""
+    let num = 0;
+    for (let i = 1; i <= row; i++) {
+        // let char= 0||'A'
+        num = i + 1;
+        for (let j = 0; j < i; j++) {
+            pattern = pattern + (i - j) + " ";
+        }
+        pattern = pattern + '\n';
+    }
+    return pattern;
+}
+
+function reverseTriangle(row = 5) {
+    let pattern = "";
+    for (let i = 1; i <= row; i++){
+            for (let j = row ; j > i; j--) {
+                pattern = pattern + j+" ";
+            }
+            for (let k = 1; k <= i; k++) {
+                pattern = pattern + "*" + " ";
+            }
+        pattern = pattern + "\n";
+    }
+    return pattern;
+}
+console.log(reverseTriangle(5));
