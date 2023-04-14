@@ -177,4 +177,33 @@ function reverseTriangle(row = 5) {
     }
     return pattern;
 }
-console.log(reverseTriangle(5));
+// console.log(reverseTriangle(5));
+
+function dabbangPattern(row = 5) {
+    let pattern = "";
+
+    for (let i = 1; i <= row; i++){
+        let num = 0, num2=0;
+        for (let j = row; j >= 1; j--){
+            num = num + 1;
+            if (j >= i) {
+                pattern = pattern + num+" ";   
+            } else {
+                pattern = pattern + "*" + " ";   
+            }
+        }
+
+        for (let j =1; j<=row; j++) {
+            num2 = (row -j)+1;
+            if (j >= i) {
+                pattern = pattern + num2 + " ";
+            } else {
+                pattern = pattern + "*" + " ";
+            }
+        }
+
+        pattern = pattern + "\n";
+    }
+    return pattern;
+}
+console.log(dabbangPattern(5));
